@@ -4,7 +4,13 @@ const { Pool } = pg.default;
 
 const connectionPool = new Pool({
   connectionString:
-    "postgresql://your-db-username:your-db-password@localhost:5432/your-db-name",
+    "postgresql://postgres:kodkod0619@localhost:5432/high-school-test",
+});
+
+// Handle pool errors
+connectionPool.on("error", (err) => {
+  console.error("Unexpected error on idle client", err);
+  process.exit(-1);
 });
 
 export default connectionPool;
