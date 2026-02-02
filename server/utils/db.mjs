@@ -7,10 +7,10 @@ const connectionPool = new Pool({
     "postgresql://postgres:kodkod0619@localhost:5432/high-school-test",
 });
 
-// Handle pool errors
-connectionPool.on("error", (err) => {
-  console.error("Unexpected error on idle client", err);
-  process.exit(-1);
-});
+// // Handle pool errors
+// connectionPool.on("error", (err) => {
+//   console.error("Unexpected error on idle client", err);
+//   process.exit(-1);
+// });
 
 export default connectionPool;
